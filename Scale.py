@@ -11,12 +11,17 @@ lab1.place(x=120,y=20)
 
 # 需要一个参数
 def print_scale(v):
+    # 将输入值转换为浮点数，然后转换为整数
     var = int(float(v))
+    # 判断数值范围并设置相应的背景颜色和文本
     if  0 <= var <= 30:
+        # 当进度在0-30之间时，设置背景为红色
         lab1.config(text=f"当前进度:{v}%",bg = "red")
     elif 31 <= var <= 70:
+        # 当进度在31-70之间时，设置背景为粉色
         lab1.config(text=f"当前进度:{v}%", bg="pink") # pink 粉色
     elif 71 <= var <= 100:
+        # 当进度在71-100之间时，设置背景为绿色
         lab1.config(text=f"当前进度:{v}%", bg="green")
 
 # 进度条
