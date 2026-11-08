@@ -1,8 +1,12 @@
 """
-Canvas：画布，提供绘图功能(直线、椭圆、多边形、矩形) 可以包含图形或位图，用来绘制图表和图，创建图形编辑器，实现定制窗口部件。
+Canvas 画布提供绘图功能(直线、椭圆、多边形、矩形) 可以包含图形或位图，用来绘制图表和图，创建图形编辑器，实现定制窗口部件。
 """
-
+import os
 import tkinter as tk
+
+# 图片路径要基于本文件所在目录，否则换个工作目录运行就会报
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+IMG_PATH = os.path.join(BASE_DIR, "image", "pic.gif")
 
 window = tk.Tk()
 window.title("Canvas")
@@ -27,7 +31,7 @@ can1_garden = can1.create_oval(100,100,200,200,fill = "blue")
 can1_arc = can1.create_arc(10,200,100,300,fill = "white",start = 0 ,extent = 90)
 
 # t填充图片
-can1_img = tk.PhotoImage(file = r'.\image\pic.gif')
+can1_img = tk.PhotoImage(file=IMG_PATH)
 _img = can1.create_image(200,10,image=can1_img,anchor = tk.NW)
 
 can1.place(x=200, y=20) # 刷新到画布上
